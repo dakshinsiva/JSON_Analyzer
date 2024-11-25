@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cybersecurity Questions Glossary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .glossary-header {
+            margin-bottom: 30px;
+        }
+        .glossary-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .glossary-subtitle {
+            color: #666;
+            font-size: 14px;
+        }
+        .alphabet-nav {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .alphabet-nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        .alphabet-nav a:hover {
+            background-color: #f0f0f0;
+        }
+        .alphabet-nav a.disabled {
+            color: #ccc;
+            pointer-events: none;
+        }
+        .search-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .domain-select {
+            padding: 8px;
+            min-width: 150px;
+        }
+        .search-input {
+            flex-grow: 1;
+            padding: 8px;
+        }
+        .question-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .question-item {
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .question-item:hover {
+            background-color: #f9f9f9;
+        }
+        .section-letter {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .question-item {
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .question-id {
+            font-weight: bold;
+        }
+
+        .question-title {
+            color: #666;
+        }
+
+        .responses {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .response {
+            margin-bottom: 15px;
+        }
+
+        .response h4 {
+            margin: 0 0 5px 0;
+            color: #333;
+        }
+
+        .response p {
+            margin: 0;
+            color: #666;
+        }
+
+        .question-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .question-item.expanded {
+            background-color: #f5f5f5;
+        }
+
+        .question-detail {
+            padding: 20px;
+        }
+
+        .tags {
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-right: 8px;
+            font-size: 12px;
+        }
+
+        .response-section h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .ideal-response {
+            border-left: 4px solid #28a745;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        .good-response {
+            border-left: 4px solid #ffc107;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        .bad-response {
+            border-left: 4px solid #dc3545;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        .evidence, .missing-evidence {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .tools {
+            margin-left: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .category-counts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .category-count {
+            background: #f5f5f5;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .tag {
+            background: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .tag::before {
+            content: "★";
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="glossary-header">
+        <h1 class="glossary-title">Glossary</h1>
+        <p class="glossary-subtitle">Explore commonly asked cybersecurity questions.</p>
+    </div>
+
+    <div class="alphabet-nav">
+        <a href="#A">A</a>
+        <a href="#B">B</a>
+        <a href="#C">C</a>
+        <a href="#D">D</a>
+        <a href="#E">E</a>
+        <a href="#F">F</a>
+        <a href="#G">G</a>
+        <a href="#H">H</a>
+        <a href="#I">I</a>
+        <a href="#J">J</a>
+        <a href="#K">K</a>
+        <a href="#L">L</a>
+        <a href="#M">M</a>
+        <a href="#N">N</a>
+        <a href="#O">O</a>
+        <a href="#P">P</a>
+        <a href="#Q">Q</a>
+        <a href="#R">R</a>
+        <a href="#S">S</a>
+        <a href="#T">T</a>
+        <a href="#U">U</a>
+        <a href="#V">V</a>
+        <a href="#W">W</a>
+        <a href="#X">X</a>
+        <a href="#Y">Y</a>
+        <a href="#Z">Z</a>
+    </div>
+
+    <div class="search-section">
+        <select class="domain-select">
+            <option value="">Domain</option>
+        </select>
+        <input type="text" class="search-input" placeholder="Search">
+    </div>
+
+    <div id="questionContainer" class="question-list">
+        <!-- Questions will be dynamically inserted here -->
+    </div>
+
+    <script>
+        // Define the groupQuestionsByCategory function first
+        function groupQuestionsByCategory(questions) {
+            const categories = {
+                "API Security": [],
+                "Access Control": [],
+                "Access and Possession Control": [],
+                "Asset Management and Lifecycle Control": [],
+                "Audit and Review Procedures": [],
+                "Change Management and Configuration Control": [],
+                "Compliance": [],
+                "Cybersecurity Culture and Organizational Awareness": [],
+                "Data Integrity and System Reliability": [],
+                "Data Lifecycle Management": [],
+                "Data Protection": [],
+                "Disposal and Decommissioning Practices": [],
+                "Emerging Technologies and AI Management": [],
+                "Encryption": [],
+                "Environmental and Physical Resilience": [],
+                "Feedback and Continuous Improvement": [],
+                "Geolocation and Data Residency": [],
+                "Governance": [],
+                "Incident Response": [],
+                "Intellectual Property Protection": [],
+                "Legal and Regulatory Compliance": [],
+                "Monitoring": [],
+                "Network Security": [],
+                "Performance Metrics and KPIs": [],
+                "Policy Enforcement": [],
+                "Policy Review and Adaptation": [],
+                "Reporting": [],
+                "Risk Management": [],
+                "Secure Communication and Collaboration Tools": [],
+                "Strategic Planning and Business Alignment": [],
+                "Supply Chain Security": [],
+                "Uncategorized": []
+            };
+
+            questions.forEach(question => {
+                // For now, put all questions in Uncategorized since we need to determine categorization logic
+                categories["Uncategorized"].push(question);
+            });
+
+            return categories;
+        }
+
+        // Define the displayCategoryCount function
+        function displayCategoryCount(categories) {
+            const countContainer = document.createElement('div');
+            countContainer.className = 'category-counts';
+            
+            Object.entries(categories).forEach(([category, questions]) => {
+                if (questions.length > 0) {
+                    const countDiv = document.createElement('div');
+                    countDiv.className = 'category-count';
+                    countDiv.innerHTML = `${category}: ${questions.length}`;
+                    countDiv.onclick = () => showCategoryQuestions(category, questions);
+                    countContainer.appendChild(countDiv);
+                }
+            });
+
+            return countContainer;
+        }
+
+        // Define the displayGroupedQuestions function
+        function displayGroupedQuestions(groupedQuestions) {
+            const container = document.getElementById('questionContainer');
+            
+            Object.entries(groupedQuestions).forEach(([category, questions]) => {
+                if (questions.length > 0) {
+                    const categorySection = document.createElement('div');
+                    categorySection.className = 'category-section';
+                    categorySection.innerHTML = `
+                        <h2 class="category-title">${category}</h2>
+                        <div class="questions-list">
+                            ${questions.map(question => `
+                                <div class="question-item" onclick="showQuestionDetail(${JSON.stringify(question)})">
+                                    <div class="question-header">
+                                        <span class="question-id">${question.question_id}</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                    container.appendChild(categorySection);
+                }
+            });
+        }
+
+        // Main function to load question data
+        async function loadQuestionData() {
+            try {
+                console.log('Attempting to fetch JSON...');
+                const response = await fetch('Question_Finale_copy_2.json');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                console.log('Parsed JSON data:', data);
+                
+                // Filter out empty questions
+                const validQuestions = data.questions.filter(q => 
+                    q.question_id && 
+                    (q.responses.ideal || q.responses.good || q.responses.bad)
+                );
+                
+                // Group questions by category
+                const groupedQuestions = groupQuestionsByCategory(validQuestions);
+                
+                // Display category counts
+                const container = document.getElementById('questionContainer');
+                container.appendChild(displayCategoryCount(groupedQuestions));
+                
+                // Display questions grouped by category
+                displayGroupedQuestions(groupedQuestions);
+                
+            } catch (error) {
+                console.error('Detailed error loading question data:', error);
+                document.getElementById('questionContainer').innerHTML = 
+                    `<div class="error">Error loading question data: ${error.message}</div>`;
+            }
+        }
+
+        function groupQuestionsByFirstLetter(questions) {
+            const grouped = {};
+            questions.forEach(q => {
+                if (q.question_id) {
+                    // Get first letter, handling numeric IDs
+                    let firstLetter = q.question_id.trim().charAt(0).toUpperCase();
+                    // If it's a number, put it under '#'
+                    if (!isNaN(firstLetter)) {
+                        firstLetter = '#';
+                    }
+                    if (!grouped[firstLetter]) {
+                        grouped[firstLetter] = [];
+                    }
+                    grouped[firstLetter].push(q);
+                }
+            });
+            return grouped;
+        }
+
+        function displayGroupedQuestions(groupedQuestions) {
+            const container = document.getElementById('questionContainer');
+            container.innerHTML = '';
+
+            Object.keys(groupedQuestions).sort().forEach(letter => {
+                // Add section letter
+                const letterHeader = document.createElement('div');
+                letterHeader.className = 'section-letter';
+                letterHeader.id = letter;
+                letterHeader.textContent = letter;
+                container.appendChild(letterHeader);
+
+                // Add questions for this letter
+                groupedQuestions[letter].forEach(question => {
+                    const questionDiv = document.createElement('div');
+                    questionDiv.className = 'question-item';
+                    
+                    // Create the question content
+                    const questionContent = document.createElement('div');
+                    questionContent.className = 'question-content';
+                    questionContent.innerHTML = `
+                        <div class="question-header">
+                            <span class="question-id">${question.question_id}</span>
+                            ${question.title ? `<span class="question-title">${question.title}</span>` : ''}
+                        </div>
+                        <div class="responses" style="display: none;">
+                            ${question.responses.ideal ? `
+                                <div class="response ideal">
+                                    <h4>Ideal Response:</h4>
+                                    <p>${question.responses.ideal}</p>
+                                </div>
+                            ` : ''}
+                            ${question.responses.good ? `
+                                <div class="response good">
+                                    <h4>Good Response:</h4>
+                                    <p>${question.responses.good}</p>
+                                </div>
+                            ` : ''}
+                            ${question.responses.bad ? `
+                                <div class="response bad">
+                                    <h4>Bad Response:</h4>
+                                    <p>${question.responses.bad}</p>
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+
+                    // Add click handler to toggle responses
+                    questionDiv.addEventListener('click', () => {
+                        const responses = questionDiv.querySelector('.responses');
+                        const isHidden = responses.style.display === 'none';
+                        responses.style.display = isHidden ? 'block' : 'none';
+                        questionDiv.classList.toggle('expanded', isHidden);
+                    });
+
+                    questionDiv.appendChild(questionContent);
+                    container.appendChild(questionDiv);
+                });
+            });
+        }
+
+        function updateAlphabetNavigation(groupedQuestions) {
+            const letters = document.querySelectorAll('.alphabet-nav a');
+            letters.forEach(letter => {
+                const letterText = letter.textContent;
+                if (!groupedQuestions[letterText]) {
+                    letter.classList.add('disabled');
+                } else {
+                    letter.classList.remove('disabled');
+                }
+            });
+        }
+
+        function displayQuestionDetail(question) {
+            return `
+                <div class="question-detail">
+                    <a href="#" class="back-button">← Back</a>
+                    
+                    <h1 class="question-title">${question.question_id}</h1>
+                    
+                    <div class="tags">
+                        ${question.category ? `<span class="tag">${question.category}</span>` : ''}
+                        ${question.subcategories ? question.subcategories.map(sub => 
+                            `<span class="tag">${sub}</span>`
+                        ).join('') : ''}
+                    </div>
+
+                    <div class="response-section">
+                        <h2 class="response-title ideal-response">Ideal Response</h2>
+                        <p class="response-content">${question.responses.ideal}</p>
+                        ${displayEvidence(question.evidence, 'Required Evidence')}
+                    </div>
+
+                    <div class="response-section">
+                        <h2 class="response-title good-response">Good Response</h2>
+                        <p class="response-content">${question.responses.good}</p>
+                    </div>
+
+                    <div class="response-section">
+                        <h2 class="response-title bad-response">Bad Response</h2>
+                        <p class="response-content">${question.responses.bad}</p>
+                        ${question.missing_evidence ? displayEvidence(question.missing_evidence, 'Missing Evidence') : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        function displayEvidence(evidence, title) {
+            if (!evidence || evidence.length === 0) return '';
+            
+            return `
+                <div class="evidence-section">
+                    <h3 class="evidence-title">${title}:</h3>
+                    <ul class="evidence-list">
+                        ${evidence.map(item => `
+                            <li class="evidence-item">
+                                ${item.description || item}
+                                ${item.tools ? `
+                                    <div class="tools">
+                                        ${item.tools.open_source ? `
+                                            <div class="open-source-tools">
+                                                Open Source Tools: ${item.tools.open_source.join(', ')}
+                                            </div>
+                                        ` : ''}
+                                        ${item.tools.commercial ? `
+                                            <div class="commercial-tools">
+                                                Commercial Tools: ${item.tools.commercial.join(', ')}
+                                            </div>
+                                        ` : ''}
+                                    </div>
+                                ` : ''}
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+        }
+
+        // Load the data when the page loads
+        window.addEventListener('load', loadQuestionData);
+
+        // First, let's create a function to filter questions by category
+        function filterQuestionsByCategory(questions, selectedCategory) {
+            return questions.filter(question => {
+                // You might need to adjust this logic based on how categories are stored in your JSON
+                return question.category === selectedCategory || 
+                       (question.tags && question.tags.includes(selectedCategory));
+            });
+        }
+
+        // Add function to show questions for selected category
+        function showCategoryQuestions(category, questions) {
+            const container = document.getElementById('questionContainer');
+            
+            // Create back button and category header
+            container.innerHTML = `
+                <button onclick="loadQuestionData()" class="back-button">← Back to Categories</button>
+                <h2 class="category-title">${category} (${questions.length} questions)</h2>
+                <div class="questions-list"></div>
+            `;
+
+            const questionsList = container.querySelector('.questions-list');
+            
+            // Display each question in the category
+            questions.forEach(question => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question-item';
+                questionDiv.innerHTML = `
+                    <div class="question-header">
+                        <span class="question-id">${question.question_id}</span>
+                    </div>
+                `;
+                questionDiv.onclick = () => showQuestionDetail(question);
+                questionsList.appendChild(questionDiv);
+            });
+        }
+
+        // Update the styling
+        const styles = `
+            .category-counts {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                margin: 20px 0;
+            }
+
+            .category-count {
+                background: #f5f5f5;
+                padding: 10px 15px;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.2s;
+            }
+
+            .category-count:hover {
+                background: #e0e0e0;
+            }
+
+            .questions-list {
+                margin-top: 20px;
+            }
+
+            .question-item {
+                padding: 15px;
+                border: 1px solid #eee;
+                border-radius: 4px;
+                margin-bottom: 10px;
+                cursor: pointer;
+                transition: background-color 0.2s;
+            }
+
+            .question-item:hover {
+                background: #f9f9f9;
+            }
+
+            .back-button {
+                padding: 8px 15px;
+                border: none;
+                background: #f0f0f0;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-bottom: 20px;
+            }
+
+            .back-button:hover {
+                background: #e0e0e0;
+            }
+
+            .category-title {
+                font-size: 24px;
+                margin-bottom: 20px;
+                color: #333;
+            }
+        `;
+
+        // Add the styles to the document
+        const styleSheet = document.createElement("style");
+        styleSheet.textContent = styles;
+        document.head.appendChild(styleSheet);
+
+        // Update showQuestionDetail function to include a back button to category
+        function showQuestionDetail(question) {
+            const container = document.getElementById('questionContainer');
+            container.innerHTML = `
+                <button onclick="loadQuestionData()" class="back-button">← Back to Categories</button>
+                <div class="question-detail">
+                    <h1 class="question-title">${question.question_id}</h1>
+                    <div class="response-section">
+                        <h2 class="response-title ideal-response">Ideal Response</h2>
+                        <p>${question.responses.ideal}</p>
+                    </div>
+                    <div class="response-section">
+                        <h2 class="response-title good-response">Good Response</h2>
+                        <p>${question.responses.good}</p>
+                    </div>
+                    <div class="response-section">
+                        <h2 class="response-title bad-response">Bad Response</h2>
+                        <p>${question.responses.bad}</p>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
